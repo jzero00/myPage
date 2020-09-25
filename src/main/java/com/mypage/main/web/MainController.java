@@ -1,13 +1,22 @@
 package com.mypage.main.web;
 
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mypage.main.service.MainServiceImpl;
+import com.mypage.vo.MenuVO;
+
 @Controller
 @RequestMapping("/*")
 public class MainController {
-
+	
+	@Autowired
+	private MainServiceImpl mainService;
+	
 	@RequestMapping("")
 	public ModelAndView init(ModelAndView mnv) {
 		String url = "jsp/home";
@@ -18,24 +27,15 @@ public class MainController {
 	@RequestMapping("main")
 	public ModelAndView main(ModelAndView mnv) {
 		String url = "jsp/main/main";
-		mnv.setViewName(url);
-		
-/*		try {
-			String property = "";
-			
-			Properties prop = new Properties();
-			
-			FileInputStream fis = new FileInputStream(property);
-			
-			prop.load(new java.io.BufferedInputStream(fis));
-			
-			String msg = prop.getProperty("menu_1");
-			
-			System.out.println(msg);			
-		} catch (Exception e) {
+		MenuVO menu = null;
+		try {
+			menu = (MenuVO) mainService.getCodeLevel().get(0);
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}*/
+		}
 		
+		mnv.addObject("menu", menu);
+		mnv.setViewName(url);
 		return mnv;
 	}
 }
