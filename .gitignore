@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java
 
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# End of https://www.toptal.com/developers/gitignore/api/java
 ### Eclipse ###
 .metadata
 bin/
@@ -93,3 +97,15 @@ local.properties
 hs_err_pid*
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/java-web
+# Edit at https://www.toptal.com/developers/gitignore?templates=java-web
+
+## ver 1.1 java-web 추가
+
+### Java-Web ###
+## ignoring target file
+target/
+
+# End of https://www.toptal.com/developers/gitignore/api/java-web
