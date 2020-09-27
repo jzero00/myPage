@@ -16,7 +16,7 @@ public class MainDaoImpl implements MainDao {
 	@Override
 	public List<?> selectMainMenu() throws SQLException {
 		List<?> menuList = null;
-		menuList = sqlSession.selectList("");
+		menuList = sqlSession.selectList("Menu-Mapper.select_top_menu");
 		return menuList;
 	}
 

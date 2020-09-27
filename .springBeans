@@ -7,10 +7,10 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-		<config>src/main/resources/com/spring/context/servlet-context.xml</config>
+		<config>src/main/resources/com/mypage/context/root-context.xml</config>
+		<config>src/main/resources/com/mypage/context/servlet-context.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
