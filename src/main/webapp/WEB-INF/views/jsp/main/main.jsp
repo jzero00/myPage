@@ -10,12 +10,12 @@
 </head>
 <body>
 	<ul class="nav flex-column">
-		<li class="nav-item"><a class="nav-link active" href="/">HOME</a></li>
+		<li class="nav-item"><a class="nav-link active" href="<%=request.getContextPath() %>${menu.get(0).getUrl() }">${menu.get(0).getCode_name() }</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 		<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
 	</ul>
-	<span>${menu.get(0).getUrl() }</span>
+	<span></span>
 	메인페이지에 접속하였습니다.
 </body>
 </html>

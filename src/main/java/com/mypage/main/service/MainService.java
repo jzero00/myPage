@@ -8,5 +8,5 @@ public interface MainService {
 	/**
 	 * Code Level이 0인 메뉴를 가져온다. 
 	 */
-	public List<?> getCodeLevel() throws SQLException;
+	public List<?> getTopMenu() throws SQLException;
 }

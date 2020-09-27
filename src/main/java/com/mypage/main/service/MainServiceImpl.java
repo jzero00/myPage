@@ -15,7 +15,7 @@ public class MainServiceImpl implements MainService {
 	private MainDaoImpl mainDao;
 	
 	@Override
-	public List<?> getCodeLevel() throws SQLException {
+	public List<?> getTopMenu() throws SQLException {
 		return mainDao.selectMainMenu();
 	}
 

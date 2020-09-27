@@ -1,6 +1,7 @@
 package com.mypage.main.web;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,14 +28,15 @@ public class MainController {
 	@RequestMapping("main")
 	public ModelAndView main(ModelAndView mnv) {
 		String url = "jsp/main/main";
-		MenuVO menu = null;
+		List<MenuVO> menu = null;
 		try {
-			menu = (MenuVO) mainService.getCodeLevel().get(0);
+			menu = (List<MenuVO>) mainService.getTopMenu();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		mnv.addObject("menu", menu);
+//		System.out.println(menu.get(0).getCode_level());
 		mnv.setViewName(url);
 		return mnv;
 	}
