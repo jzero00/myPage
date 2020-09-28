@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -10,7 +11,9 @@
 </head>
 <body>
 	<ul class="nav flex-column">
-		<li class="nav-item"><a class="nav-link active" href="<%=request.getContextPath() %>${menu.get(0).getUrl() }">${menu.get(0).getCode_name() }</a></li>
+		<c:forEach items="${menu }" var="menu_list">
+			<li class="nav-item"><a class="nav-link active" href="<%=request.getContextPath() %>${menu_list.getUrl() }">${menu_list.getCode_name() }</a></li>		
+		</c:forEach>
 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 		<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>

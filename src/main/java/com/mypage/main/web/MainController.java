@@ -40,4 +40,13 @@ public class MainController {
 		mnv.setViewName(url);
 		return mnv;
 	}
+	
+	@RequestMapping("setting")
+	public ModelAndView menuSetting(ModelAndView mnv) {
+		String url = "jsp/setting/main";
+		
+		mnv.setViewName(url);
+		
+		return mnv;
+	}
 }
