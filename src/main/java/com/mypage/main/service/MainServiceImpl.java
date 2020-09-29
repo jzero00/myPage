@@ -19,4 +19,11 @@ public class MainServiceImpl implements MainService {
 		return mainDao.selectMainMenu();
 	}
 
+	@Override
+	public List<?> getSubMenu() throws SQLException {
+		return mainDao.selectSubMenu();
+	}
+	
+	
+
 }

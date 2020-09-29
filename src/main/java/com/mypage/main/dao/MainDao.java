@@ -6,4 +6,6 @@ import java.util.List;
 public interface MainDao {
 
 	public List<?> selectMainMenu() throws SQLException;
+	
+	public List<?> selectSubMenu() throws SQLException;
 }

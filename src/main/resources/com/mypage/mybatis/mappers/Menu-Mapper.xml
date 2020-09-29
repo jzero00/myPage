@@ -8,6 +8,12 @@
 		WHERE code_level = 0
 	</select>
 	
+	<select id="select_sub_menu" resultType="menu">
+		SELECT *
+		FROM menu
+		WHERE code_level = 1
+	</select>
+	
 </mapper>
 
 
