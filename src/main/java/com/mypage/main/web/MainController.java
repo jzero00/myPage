@@ -39,7 +39,7 @@ public class MainController {
 		}
 		
 		mnv.addObject("menu", menu);
-		mnv.addObject("sub_menu", sub_menu);
+//		mnv.addObject("sub_menu", sub_menu);
 //		System.out.println(menu.get(0).getCode_level());
 		mnv.setViewName(url);
 		return mnv;
