@@ -29,18 +29,14 @@ public class MainController {
 	public ModelAndView main(ModelAndView mnv) {
 		String url = "jsp/main/main";
 		List<MenuVO> menu = null;
-		List<MenuVO> sub_menu = null;
 		
 		try {
 			menu = (List<MenuVO>) mainService.getTopMenu();
-			sub_menu = (List<MenuVO>) mainService.getSubMenu();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		mnv.addObject("menu", menu);
-//		mnv.addObject("sub_menu", sub_menu);
-//		System.out.println(menu.get(0).getCode_level());
 		mnv.setViewName(url);
 		return mnv;
 	}
@@ -48,7 +44,15 @@ public class MainController {
 	@RequestMapping("setting")
 	public ModelAndView menuSetting(ModelAndView mnv) {
 		String url = "jsp/setting/main";
+		List<MenuVO> menu = null;
 		
+		try {
+			menu = (List<MenuVO>) mainService.getTopMenu();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		mnv.addObject("menu", menu);
 		mnv.setViewName(url);
 		
 		return mnv;

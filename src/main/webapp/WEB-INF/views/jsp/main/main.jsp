@@ -17,9 +17,9 @@
 		<c:forEach items="${sub_menu }" var="sub_menu_list">
 			<li class="nav-item"><a class="nav-link active" href="<%=request.getContextPath() %>${sub_menu_list.getUrl() }">${sub_menu_list.getCode_name() }</a></li>		
 		</c:forEach>
-		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-		<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-		<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
+<!-- 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li> -->
+<!-- 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li> -->
+<!-- 		<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li> -->
 	</ul>
 	<span></span>
 	메인페이지에 접속하였습니다.
