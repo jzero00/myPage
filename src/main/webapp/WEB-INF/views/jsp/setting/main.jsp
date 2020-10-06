@@ -16,11 +16,11 @@
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col">메뉴 코드</th>
-				<th scope="col">메뉴 이름</th>
+				<th scope="col">코드</th>
+				<th scope="col">이름</th>
 				<th scope="col">URL</th>
-				<th scope="col">메뉴 레벨</th>
-				<th scope="col">메뉴 사용여부</th>
+				<th scope="col">레벨</th>
+				<th scope="col">사용여부</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,6 +37,8 @@
 						<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
 					</select>
 				</td>
+				<td><button type="button" class="btn btn-primary">수정</button></td>
+				<td><button type="button" class="btn btn-warning">삭제</button></td>
 			</tr>
 			</c:forEach>
 			<tr>
@@ -77,6 +79,12 @@
 		chk = document.getElementById('code_name').value;
 		if(chk == ''){
 			alert('메뉴 이름을 입력해주세요');
+			return false;
+		}	
+		
+		chk = document.getElementById('url').value;
+		if(chk == ''){
+			alert('url을 입력해주세요');
 			return false;
 		}	
 	}
