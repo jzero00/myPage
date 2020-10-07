@@ -37,8 +37,8 @@
 						<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
 					</select>
 				</td>
-				<td><button type="button" class="btn btn-primary">수정</button></td>
-				<td><button type="button" class="btn btn-warning">삭제</button></td>
+				<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
+				<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
 			</tr>
 			</c:forEach>
 			<tr>
@@ -87,5 +87,18 @@
 			alert('url을 입력해주세요');
 			return false;
 		}	
+	}
+	
+	function edit_menu(code_name){
+		if(confirm(code_name+'메뉴를 수정하시겠습니까?')){
+			alert('삭제 완료');
+		}
+	}
+	
+	function delete_menu(code_name){
+		if(confirm(code_name+'메뉴를 삭제하시겠습니까?')){
+			alert('삭제 완료');
+		}
+// 		alert(code_name);
 	}
 </script>
