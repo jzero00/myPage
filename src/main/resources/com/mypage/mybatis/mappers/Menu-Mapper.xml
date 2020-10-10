@@ -24,6 +24,11 @@
 		WHERE code_level = 1
 	</select>
 	
+	<update id="delete_menu">
+		DELETE FROM menu
+		WHERE code_name = #{mcode}
+	</update>
+	
 </mapper>
 
 
