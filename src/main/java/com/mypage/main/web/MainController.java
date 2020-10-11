@@ -45,14 +45,18 @@ public class MainController {
 	public ModelAndView menuSetting(ModelAndView mnv) {
 		String url = "jsp/setting/main";
 		List<MenuVO> menu = null;
+		List<MenuVO> category = null;
 		
 		try {
 			menu = (List<MenuVO>) mainService.getTopMenu();
+			category = (List<MenuVO>) mainService.getCategory();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		mnv.addObject("menu", menu);
+		mnv.addObject("category", category);
+		
 		mnv.setViewName(url);
 		
 		return mnv;

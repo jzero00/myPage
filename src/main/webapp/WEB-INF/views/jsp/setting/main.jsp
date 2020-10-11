@@ -21,33 +21,69 @@
 				<th scope="col">URL</th>
 				<th scope="col">레벨</th>
 				<th scope="col">사용여부</th>
+				<th scope="col">상위메뉴</th>
+				<th scope="col">수정</th>
+				<th scope="col">삭제</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${menu }" var="menu_list">
-			<tr id="menu_content">
-				<td>${menu_list.getMcode() }</td>
-				<td>${menu_list.getCode_name() }</td>
-				<td>${menu_list.getUrl() }</td>
-				<td>${menu_list.getCode_level() }</td>
-				<!-- 사용 여부 select box -->
-				<td>
-					<select class="custom-select">
-						<option value="0" <c:if test="${menu_list.getEnable() == 0}">selected</c:if>>미사용</option>
-						<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
-					</select>
-				</td>
-				<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
-				<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
-			</tr>
+				<c:if test="${menu_list.getIscategory() eq 0 }">
+				
+				<tr id="menu_content" style="background: yellow;">
+					<td>${menu_list.getMcode() }</td>
+					<td>${menu_list.getCode_name() }</td>
+					<td>${menu_list.getUrl() }</td>
+					<td>${menu_list.getCode_level() }</td>
+					<!-- 사용 여부 select box -->
+					<td>
+						<select class="custom-select">
+							<option value="0" <c:if test="${menu_list.getEnable() == 0}">selected</c:if>>미사용</option>
+							<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
+						</select>
+					</td>
+					<td>${menu_list.getUp_code() }</td>
+					
+					<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
+					<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
+				</tr>
+						
+				</c:if>
+				<c:if test="${menu_list.getIscategory() eq 1 }">
+					<tr id="menu_content">
+						<td>${menu_list.getMcode() }</td>
+						<td>${menu_list.getCode_name() }</td>
+						<td>${menu_list.getUrl() }</td>
+						<td>${menu_list.getCode_level() }</td>
+						<!-- 사용 여부 select box -->
+						<td>
+							<select class="custom-select">
+								<option value="0" <c:if test="${menu_list.getEnable() == 0}">selected</c:if>>미사용</option>
+								<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
+							</select>
+						</td>
+<%-- 						<td>${menu_list.getUp_code() }</td> --%>
+						<td>
+						<select class="custom-select">
+							<c:forEach items="${category }" var="category">
+								<option value="${category.getMcode() }"
+								<c:if test="${menu_list.getCode_name() == category.getCode_name()}">selected</c:if>
+								>${category.getCode_name() }</option>
+							</c:forEach>
+						</select>
+						</td>
+						<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
+						<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
+					</tr>
+				</c:if>
 			</c:forEach>
-			<tr>
+<!-- 			<tr>
 				<td><input type="text" class="form-control" name="mcode" id="mcode"></td>
 				<td><input type="text" class="form-control" name="code_name" id="code_name"></td>
 				<td><input type="text" class="form-control" name="url" id="url"></td>
 				<td><input type="text" class="form-control" name="code_level" id="code_level"></td>
 				<td><button type="button" class="btn btn-primary" id="btn_add" name="메뉴추가">메뉴 추가</button></td>
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 	

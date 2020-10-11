@@ -8,4 +8,6 @@ public interface MainDao {
 	public List<?> selectMainMenu() throws SQLException;
 	
 	public List<?> selectSubMenu() throws SQLException;
+	
+	public List<?> selectCategory() throws SQLException;
 }

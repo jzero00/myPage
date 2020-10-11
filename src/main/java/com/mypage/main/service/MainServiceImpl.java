@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mypage.main.dao.MainDaoImpl;
+import com.mypage.vo.MenuVO;
 
 @Service("MainService")
 public class MainServiceImpl implements MainService {
@@ -22,6 +23,11 @@ public class MainServiceImpl implements MainService {
 	@Override
 	public List<?> getSubMenu() throws SQLException {
 		return mainDao.selectSubMenu();
+	}
+
+	@Override
+	public List<?> getCategory() throws SQLException {
+		return mainDao.selectCategory();
 	}
 	
 	

@@ -18,6 +18,15 @@
 		ORDER BY mcode ASC
 	</select>
 	
+	<select id="select_category" resultType="menu">
+		SELECT *
+		FROM menu
+		WHERE code_level = 0
+		AND iscategory = 0
+		AND "enable" = 1
+		ORDER BY mcode
+	</select>
+	
 	<select id="select_sub_menu" resultType="menu">
 		SELECT *
 		FROM menu

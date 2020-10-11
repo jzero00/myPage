@@ -6,7 +6,7 @@ public class MenuVO {
 	private String code_name;
 	private String url;
 	private String icon_file;
-	private String upcode;
+	private String up_code;
 	private int enable;
 	private int iscategory;
 	private String icon_color;
@@ -37,11 +37,11 @@ public class MenuVO {
 	public void setIcon_file(String icon_file) {
 		this.icon_file = icon_file;
 	}
-	public String getUpcode() {
-		return upcode;
+	public String getUp_code() {
+		return up_code;
 	}
-	public void setUpcode(String upcode) {
-		this.upcode = upcode;
+	public void setUp_code(String up_code) {
+		this.up_code = up_code;
 	}
 	public int getEnable() {
 		return enable;
