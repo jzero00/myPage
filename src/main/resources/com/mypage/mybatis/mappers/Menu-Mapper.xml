@@ -4,15 +4,15 @@
 	
 	<select id="select_top_menu" resultType="menu">
 		WITH RECURSIVE menu_list(
-			mcode, code_name, url, icon_file, up_code, enable, iscategory, icon_color, code_level, js_text) AS
+			mcode, code_name, url, icon_file, upcode, enable, iscategory, icon_color, code_level, js_text) AS
 			(
-			SELECT m1.mcode, m1.code_name, m1.url, m1.icon_file, m1.up_code, m1.enable, m1.iscategory, m1.icon_color, m1.code_level, m1.js_text
+			SELECT m1.mcode, m1.code_name, m1.url, m1.icon_file, m1.upcode, m1.enable, m1.iscategory, m1.icon_color, m1.code_level, m1.js_text
 			FROM menu m1
-			WHERE up_code IS NULL 
+			WHERE upcode IS NULL 
 			UNION ALL 
-			SELECT m2.mcode, m2.code_name, m2.url, m1.icon_file, m1.up_code, m1.enable, m2.iscategory, m1.icon_color, m1.code_level + 1, m1.js_text
+			SELECT m2.mcode, m2.code_name, m2.url, m1.icon_file, m1.upcode, m1.enable, m2.iscategory, m1.icon_color, m1.code_level + 1, m1.js_text
 			FROM menu m1, menu m2 
-			WHERE m1.mcode = m2.up_code
+			WHERE m1.mcode = m2.upcode
 		) 	SELECT *
 		FROM menu_list
 		ORDER BY mcode ASC

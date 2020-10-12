@@ -42,7 +42,7 @@
 							<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
 						</select>
 					</td>
-					<td>${menu_list.getUp_code() }</td>
+					<td>${menu_list.getUpcode() }</td>
 					
 					<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
 					<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
@@ -64,13 +64,15 @@
 						</td>
 <%-- 						<td>${menu_list.getUp_code() }</td> --%>
 						<td>
-						<select class="custom-select">
-							<c:forEach items="${category }" var="category">
-								<option value="${category.getMcode() }"
-								<c:if test="${menu_list.getCode_name() == category.getCode_name()}">selected</c:if>
-								>${category.getCode_name() }</option>
-							</c:forEach>
-						</select>
+<!-- 						<select class="custom-select"> -->
+<%-- 							<c:forEach items="${category }" var="category"> --%>
+<%-- 								<option value="${category.getMcode() }" --%>
+<%-- 								<c:if test="${menu_list.getUp_code() eq category.getMcode()}">selected</c:if> --%>
+<%-- 								>${category.getCode_name() }</option> --%>
+<!-- test -->
+								${menu_list.getUpcode() }
+<%-- 							</c:forEach> --%>
+<!-- 						</select> -->
 						</td>
 						<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
 						<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
