@@ -36,12 +36,18 @@
 					<td>${menu_list.getUrl() }</td>
 					<td>${menu_list.getCode_level() }</td>
 					<!-- 사용 여부 select box -->
+					<c:if test="${menu_list.getMcode() ne 'MENU99' }">
 					<td>
 						<select class="custom-select">
 							<option value="0" <c:if test="${menu_list.getEnable() == 0}">selected</c:if>>미사용</option>
 							<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
 						</select>
 					</td>
+					</c:if>
+					<c:if test="${menu_list.getMcode() eq 'MENU99' }">
+					<td>
+					</td>
+					</c:if>
 					<td>${menu_list.getUpcode() }</td>
 					
 					<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
@@ -62,17 +68,16 @@
 								<option value="1" <c:if test="${menu_list.getEnable() == 1}">selected</c:if>>사용</option>
 							</select>
 						</td>
-<%-- 						<td>${menu_list.getUp_code() }</td> --%>
 						<td>
-<!-- 						<select class="custom-select"> -->
-<%-- 							<c:forEach items="${category }" var="category"> --%>
-<%-- 								<option value="${category.getMcode() }" --%>
-<%-- 								<c:if test="${menu_list.getUp_code() eq category.getMcode()}">selected</c:if> --%>
-<%-- 								>${category.getCode_name() }</option> --%>
-<!-- test -->
-								${menu_list.getUpcode() }
-<%-- 							</c:forEach> --%>
-<!-- 						</select> -->
+						<%-- option으로 선택해서  해당 메뉴의 카테고리를 선택 미완... --%>
+<%-- 						<select class="custom-select">
+							<c:forEach items="${category }" var="category">
+								<option value="${category.getMcode() }"
+								<c:if test="${menu_list.getUpcode()} eq ${category.getMcode()}">selected</c:if>
+								>${category.getCode_name() }</option>
+							</c:forEach>
+						</select> --%>
+						${menu_list.getUpcode()}
 						</td>
 						<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
 						<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>
