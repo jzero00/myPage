@@ -70,14 +70,13 @@
 						</td>
 						<td>
 						<%-- option으로 선택해서  해당 메뉴의 카테고리를 선택 미완... --%>
-<%-- 						<select class="custom-select">
+						<select class="custom-select" id="category">
 							<c:forEach items="${category }" var="category">
 								<option value="${category.getMcode() }"
-								<c:if test="${menu_list.getUpcode()} eq ${category.getMcode()}">selected</c:if>
+								<c:if test="${menu_list.getUpcode() eq category.getMcode() }">selected</c:if>
 								>${category.getCode_name() }</option>
 							</c:forEach>
-						</select> --%>
-						${menu_list.getUpcode()}
+						</select>
 						</td>
 						<td><button type="button" class="btn btn-primary" onclick="javascript:edit_menu('${menu_list.getCode_name() }');">수정</button></td>
 						<td><button type="button" class="btn btn-warning" onclick="javascript:delete_menu('${menu_list.getCode_name() }');">삭제</button></td>

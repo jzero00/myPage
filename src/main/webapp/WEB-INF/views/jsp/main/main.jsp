@@ -12,7 +12,7 @@
 <body>
 	<ul class="nav flex-column">
 		<c:forEach items="${menu }" var="menu_list">
-			<li class="nav-item"><a class="nav-link active" category="${menu_list.getIscategory() }" href="<%=request.getContextPath() %>${menu_list.getUrl() }">${menu_list.getCode_name() }</a></li>		
+			<li class="nav-item"><a class="nav-link active" href="<%=request.getContextPath() %>${menu_list.getUrl() }">${menu_list.getCode_name() }</a></li>		
 		</c:forEach>
 <!-- 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li> -->
 <!-- 		<li class="nav-item"><a class="nav-link" href="#">Link</a></li> -->
