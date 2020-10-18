@@ -5,7 +5,9 @@
 	<select id="selectBoardList" resultType="board">
 		SELECT *
 		FROM board
-		WHERE mcode = #{mcode}
+		WHERE mcode = 	(SELECT mcode
+						FROM menu
+						WHERE url = #{url})
 		AND visible =  'Y'
 	</select>
 

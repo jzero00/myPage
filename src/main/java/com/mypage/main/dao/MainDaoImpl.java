@@ -33,5 +33,4 @@ public class MainDaoImpl implements MainDao {
 		menuList = sqlSession.selectList("Menu-Mapper.select_category");
 		return menuList;
 	}
-
 }
