@@ -37,6 +37,8 @@ public class BoardController {
 		System.out.println(boardList.get(0).getWriter());
 		mnv.setViewName(url);
 		mnv.addObject("boardList", boardList);
+		mnv.addObject("req_url", req_url);
+		
 		return mnv;
 	}
 	
