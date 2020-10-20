@@ -10,6 +10,12 @@
 						WHERE url = #{url})
 		AND visible =  'Y'
 	</select>
+	
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE board
+		set viewcnt = viewcnt + 1
+		WHERE seq = #{seq}
+	</update>
 
 	
 </mapper>
