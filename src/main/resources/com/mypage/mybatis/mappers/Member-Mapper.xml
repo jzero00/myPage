@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member-Mapper">
+	
+	<update id="insertMember">
+		INSERT INTO member
+		(id, password, name, nickname, enable, authority)
+		VALUES 
+		(#{id}, #{password}, #{name}, #{nickname}, 'Y', 'USER')
+	</update>
+
+	<select id="selectId">
+		SELECT *
+		FROM MEMBER
+		WHERE id = #{id}
+	</select>
+	
+	<update id="updateMemberDisable">
+		UPDATE member
+		SET enable = 'N'
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
+
+
+
+
